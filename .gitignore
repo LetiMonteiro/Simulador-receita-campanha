@@ -1,0 +1,9 @@
+# Banco de dados
+campanhas.db
+
+# Configurações do VS Code
+.vscode/
+
+# Cache do Python
+__pycache__/
+*.pyc
