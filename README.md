@@ -1,72 +1,65 @@
 # 📊 Simulador de Receita de Campanha
 
-Projeto desenvolvido em **Python** para simular a receita acumulada de uma campanha publicitária ao longo do tempo utilizando **Integrais Definidas** e armazenando os resultados em um banco de dados **SQLite**.
+## Objetivo do Projeto
 
-##  Sobre o projeto
+O Simulador de Receita de Campanha é uma aplicação desenvolvida em Python com o objetivo de estimar a receita acumulada de uma campanha publicitária ao longo do tempo por meio da aplicação de conceitos de Cálculo Integral.
 
-O objetivo deste projeto é demonstrar a aplicação prática do cálculo integral em um cenário de marketing, onde a receita por hora de uma campanha sofre um decaimento exponencial.
+O sistema utiliza um modelo matemático baseado em uma função exponencial para representar a receita instantânea de uma campanha, considerando um comportamento de decaimento ao longo das horas. A partir dessa função, é realizada uma integração numérica para calcular a receita total estimada durante todo o período da campanha.
 
-A receita instantânea é representada pela função:
-
-\[
-r(t)=Ae^{-kt}
-\]
-
-e a receita total é obtida pela integral definida da função no intervalo de tempo da campanha.
-
-Além do cálculo matemático, os resultados são persistidos em um banco de dados SQLite para futuras consultas.
+Além do processamento matemático, o projeto armazena automaticamente os resultados em um banco de dados SQLite, permitindo o registro e a consulta das simulações realizadas.
 
 ---
 
-##  Funcionalidades
+## Funcionalidades
 
-- Calcular a receita por hora utilizando uma função exponencial.
-- Calcular a receita total acumulada por meio de integração numérica.
-- Salvar automaticamente os resultados em um banco SQLite.
-- Registrar:
-  - Nome da campanha
-  - Duração
-  - Receita total estimada
+* Simulação da receita instantânea utilizando uma função exponencial.
+* Cálculo da receita acumulada por meio de integração numérica.
+* Armazenamento automático das simulações em banco de dados SQLite.
+* Registro das seguintes informações:
 
----
-
-## 🛠 Tecnologias utilizadas
-
-- Python 3
-- SQLite3
-- NumPy
-- SciPy (`scipy.integrate.quad`)
+  * Nome da campanha;
+  * Duração da campanha;
+  * Receita total estimada.
 
 ---
 
-##  Modelo Matemático
+## Tecnologias Utilizadas
 
-Receita por hora:
+* Python 3
+* SQLite3
+* NumPy
+* SciPy (`scipy.integrate.quad`)
 
-```
+---
+
+## Modelo Matemático
+
+A receita instantânea da campanha é definida pela função:
+
+```text
 r(t) = A · e^(-kt)
 ```
 
 Onde:
 
-- **A** → Receita inicial (R$/hora)
-- **k** → Taxa de decaimento
-- **t** → Tempo (horas)
+* **A** → Receita inicial (R$/hora);
+* **k** → Taxa de decaimento;
+* **t** → Tempo em horas.
 
-Receita total acumulada:
+A receita total acumulada é obtida pela integral definida:
 
-```
+```text
           T
-R(T) = ∫  A·e^(-kt) dt
+R(T) = ∫  A · e^(-kt) dt
          0
 ```
 
 ---
 
-##  Estrutura do projeto
+## Estrutura do Projeto
 
-```
-📦 simulador-receita-campanha
+```text
+simulador-receita-campanha/
 │
 ├── simulador.py
 ├── campanhas.db
@@ -75,27 +68,27 @@ R(T) = ∫  A·e^(-kt) dt
 
 ---
 
-## ▶️ Como executar
+## Como Executar
 
-### 1. Clone o repositório
+1. Clone o repositório:
 
 ```bash
 git clone https://github.com/seu-usuario/seu-repositorio.git
 ```
 
-### 2. Entre na pasta
+2. Entre na pasta do projeto:
 
 ```bash
 cd seu-repositorio
 ```
 
-### 3. Instale as dependências
+3. Instale as dependências necessárias:
 
 ```bash
 pip install numpy scipy
 ```
 
-### 4. Execute o programa
+4. Execute o programa:
 
 ```bash
 python simulador.py
@@ -103,29 +96,34 @@ python simulador.py
 
 ---
 
-##  Exemplo de execução
+## Exemplo de Execução
 
-```
+```text
 === Simulador de Receita de Campanha ===
 
-Digite o nome da campanha: Black Friday
+Digite o nome da campanha:
+Black Friday
 
-Digite a duração da campanha (em horas): 24
+Digite a duração da campanha (em horas):
+24
 
-Receita total estimada para 'Black Friday' após 24 horas:
-R$ 909.28
+Receita total estimada para "Black Friday" após 24 horas:
 
-✅ Resultado salvo no banco de dados (campanhas.db).
+R$ 909,28
+
+Resultado salvo com sucesso no banco de dados.
 ```
 
 ---
 
-##  Objetivo acadêmico
+## Finalidade Acadêmica
 
-Este projeto foi desenvolvido para aplicar conceitos de **Cálculo Integral**, **Programação em Python** e **Banco de Dados SQLite**, demonstrando como a matemática pode ser utilizada para modelar e resolver problemas reais de estimativa de receita em campanhas publicitárias.
+Este projeto foi desenvolvido para aplicar conceitos de Cálculo Integral, Programação em Python e Banco de Dados SQLite, demonstrando como técnicas matemáticas e computacionais podem ser utilizadas para modelar e estimar receitas em campanhas publicitárias.
 
 ---
 
-## 📄 Licença
+## Autora
 
-Este projeto é destinado para fins educacionais e de estudo.
+**Letícia Monteiro**
+
+Projeto desenvolvido para fins acadêmicos e de estudo.
